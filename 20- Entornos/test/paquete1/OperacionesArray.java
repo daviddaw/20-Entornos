@@ -1,15 +1,15 @@
 package paquete1;
 
-public class Array {
+public class OperacionesArray {
 	private int longitud;
 	private int[] array;
 	
-	public Array (int longitud){
+	public OperacionesArray (int longitud){
 		this.longitud=longitud;
 		array=new int[longitud];		
 	}
 	
-	public Array(int[]array){
+	public OperacionesArray(int[]array){
 		this.longitud=array.length;
 		this.array=array;
 	}
@@ -45,7 +45,7 @@ public class Array {
 		return min;
 	}
 	
-	public Array ordenar(){
+	public OperacionesArray ordenar(){
 		int [] arrayAux=this.getArray();
 		int aux;
 		for (int i=0; i<arrayAux.length-1; i++)
@@ -58,11 +58,11 @@ public class Array {
 					}
 		
 		
-		return (new Array(arrayAux));
+		return (new OperacionesArray(arrayAux));
 	}
 	
-	public Array invertir(){ //este metodo genera un objeto Array que contiene un array invertido
-		Array inverso=new Array(this.longitud);//creo un objeto de la clase Array 
+	public OperacionesArray invertir(){ //este metodo genera un objeto Array que contiene un array invertido
+		OperacionesArray inverso=new OperacionesArray(this.longitud);//creo un objeto de la clase Array 
 		//con la misma longitud que el atributo longitud
 		for (int i=0; i<array.length; i++){
 			inverso.array[this.longitud-1-i]=this.array[i]; //
@@ -82,7 +82,7 @@ public class Array {
 		return enc;
 	}
 	
-	public boolean equals (Array otro){
+	public boolean equals (OperacionesArray otro){
 		
 		if (otro.longitud!=this.longitud)
 			return false;

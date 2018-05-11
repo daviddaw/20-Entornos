@@ -5,51 +5,70 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import paquete1.Array;
+import paquete1.OperacionesArray;
 
 public class TestArray {
-	int[] miArray1= new int[] {4,1};
-	Array array = new Array(miArray1);
-	
-	
-	
-
+	int[] miArray;
+	OperacionesArray operacionesArray; //guarda el array miarray1 en operacionesArray
 	@Before
 	public void setUp() throws Exception {
-		
-		
-
-
-		
-		
-		
+		miArray= new int[] {4,1,5,2};
+		operacionesArray = new OperacionesArray(miArray);
 	}
 
 	@Test
-	public void test() {
-		int[] miArray= new int[]{4,1};
-	
-	
-	//assertArrayEquals(miArray,array.);
-		assertArrayEquals(miArray,miArray1);
-	//assertTrue(miArray==miArray1);
-	
-	
-	
+	public void testConstructor() {
+		int[] nuevoArray= new int[]{4,1,5,2};
+		assertArrayEquals(nuevoArray,miArray);	
 	}
+	
 	@Test
-	public void test2() {
-		int[] miArray= new int[]{4,1};
-		array.invertir();
-		
-		System.out.println(array[0]);
-	
-	//assertArrayEquals(miArray,array.);
-		assertArrayEquals(miArray,miArray1);
-	//assertTrue(miArray==miArray1);
-	
-	
-	
+	public void testOrdenar() {
+		int[] esperado= new int[]{1,2,4,5};//resultado esperado
+		operacionesArray = operacionesArray.ordenar();//guardo mi objeto consu atributo modificado
+		int[] actual = operacionesArray.getArray();//guardo en actual mi array modificado
+		assertArrayEquals(esperado,actual);
 	}
+	
+	@Test
+	public void testInvertido() {
+		int[] esperado= new int[]{2,5,1,4};//resultado esperado
+		operacionesArray = operacionesArray.invertir();//guardo mi objeto consu atributo modificado
+		int[] actual = operacionesArray.getArray();//guardo en actual mi array modificado
+		assertArrayEquals(esperado,actual);
+	}
+	
+
+	
+	@Test
+	public void testMinimo() {
+		int esperado= 1;//resultado esperado
+		int actual = operacionesArray.minimo();//guardo en actual mi array modificado
+		assertTrue(esperado==actual);
+	}
+	
+	@Test
+	public void testBuscar() {
+		boolean esperado= true;//resultado esperado
+		boolean actual = operacionesArray.buscar(1);//guardo en actual mi array modificado
+		assertTrue(esperado==actual);
+	}
+	
+	//Falta pasarle un objeto del tipo operaciones array creado por mi
+	public void testEquals() { 
+		boolean esperado= true;//resultado esperado
+		boolean actual = operacionesArray.equals(operacionesArray);//guardo en actual mi array modificado 
+		assertTrue(esperado==actual);
+	}
+	
+	@Test
+	public void testInicializar() {
+		boolean esperado= true;//resultado esperado
+		boolean actual = operacionesArray.buscar(1);//guardo en actual mi array modificado
+		assertTrue(esperado==actual);
+	}
+	
+	///no tengo que machacar las operaciones array por que es objeto de la clase Operaciones,
+	//no tengo que sobrescribirlo o bien el local  no lo guardo dentro un objeto o bien creo otra variable de operacionesarray
 
 }
