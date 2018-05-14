@@ -27,7 +27,7 @@ public class Factorial {
 			}
 			else {
 				fact=1;i=1;
-				while (i<num){
+				while (i<=num){
 					fact*=i;
 					i++;
 				}
