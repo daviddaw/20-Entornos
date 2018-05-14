@@ -1,4 +1,4 @@
-package Factoriall;
+package paquete1;
 
 // Clase para la gestion de entrada por teclado
 // Modificado 09/2004

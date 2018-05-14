@@ -1,8 +1,5 @@
-package Factoriall;
-
-
-
-
+package paquete;
+import paquete1.LeerTeclado;
 public class Factorial {
 	int num;	
 	public Factorial(int num) {
