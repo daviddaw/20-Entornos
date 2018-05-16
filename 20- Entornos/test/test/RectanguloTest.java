@@ -1,14 +1,19 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import paquete.Rectangulo;
+
 public class RectanguloTest {
+	Rectangulo rectangulo;
 
 	@Before
 	public void setUp() throws Exception {
+		//puntos
+		Rectangulo rectangulo = new Rectangulo(4,4);
 	}
 
 	@Test
