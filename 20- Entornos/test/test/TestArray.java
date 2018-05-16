@@ -10,6 +10,7 @@ import paquete1.Array;
 public class TestArray {
 	int[] miArray;
 	Array array; //guarda el array miarray1 en operacionesArray
+	Array arrayInvertido;
 	@Before
 	public void setUp() throws Exception {
 		miArray= new int[] {4,1,5,2};
@@ -25,7 +26,7 @@ public class TestArray {
 	@Test
 	public void testOrdenar() {
 		int[] esperado= new int[]{1,2,4,5};//resultado esperado
-		array = array.ordenar();//guardo mi objeto consu atributo modificado
+		 array.ordenar();//guardo mi objeto consu atributo modificado
 		int[] actual = array.getArray();//guardo en actual mi array modificado
 		assertArrayEquals(esperado,actual);
 	}
@@ -33,8 +34,8 @@ public class TestArray {
 	@Test
 	public void testInvertido() {
 		int[] esperado= new int[]{2,5,1,4};//resultado esperado
-		array = array.invertir();//guardo mi objeto consu atributo modificado
-		int[] actual = array.getArray();//guardo en actual mi array modificado
+		arrayInvertido = array.invertir();//guardo mi objeto consu atributo modificado
+		int[] actual = arrayInvertido.getArray();//guardo en actual mi array modificado
 		assertArrayEquals(esperado,actual);
 	}
 	

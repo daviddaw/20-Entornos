@@ -22,8 +22,8 @@ public class Rectangulo {
 	}
 	
 	public double alto(){
-		
-		double x0=esquina1.getX();
+		//p7,5
+		double x0=esquina1.getX();//
 		double y0=esquina2.getY();
 		Punto p1=new Punto(x0,y0);
 		double altura=esquina1.distancia(p1);
